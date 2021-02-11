@@ -1,0 +1,11 @@
+<ng-sidebar-container>
+  <!-- A sidebar -->
+  <ng-sidebar [(opened)]="opened">
+    <p>Sidebar contents</p>
+  </ng-sidebar>
+
+  <!-- Page content -->
+  <div ng-sidebar-content>
+    <button (click)="toggleSidebar()">Toggle sidebar</button>
+  </div>
+</ng-sidebar-container>

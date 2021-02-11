@@ -2,3 +2,7 @@
 * {
     font-family: 'Open Sans', sans-serif;
 }
+
+app-pokemon-info {
+    position: absolute;
+}
