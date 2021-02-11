@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbNavChangeEvent} from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-pokemon-info',
@@ -10,39 +12,24 @@ export class PokemonInfoComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  //   opened: boolean = true;
-
-  //   _toggleSidebar() {
-  //     this.opened = !this.opened;
-  //   }
-
-  _opened: boolean = false;
-  _modeNum: number = 0;
-  _positionNum: number = 0;
-
-  // _autoCollapseHeight = null;
-  // _autoCollapseWidth = null;
-
-  _MODES: Array<string> = ['over', 'push', 'slide'];
-  _POSITIONS: Array<string> = ['left', 'right', 'top', 'bottom'];
+  _opened: boolean = true;
+  pokemonId: any = 0;
 
   _toggleOpened(): void {
-    this._opened = !this._opened;
+    this._opened = true;
   }
 
-  _toggleMode(): void {
-    this._modeNum++;
-
-    if (this._modeNum === this._MODES.length) {
-      this._modeNum = 0;
-    }
+  _closeDetail() {
+    this._opened = false;
   }
 
-  _togglePosition(): void {
-    this._positionNum++;
-
-    if (this._positionNum === this._POSITIONS.length) {
-      this._positionNum = 0;
-    }
+  receiveIndex(pokemonIndex: number) {
+    console.log('pai:' + pokemonIndex);
+    this.pokemonId = pokemonIndex;
   }
+
+  //Toggle display data
+
+  active = 1;
+
 }
