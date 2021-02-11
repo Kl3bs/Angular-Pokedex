@@ -15,16 +15,16 @@ import { PokemonInfoComponent } from './pokemon-info/pokemon-info.component';
     AppComponent,
     HeaderComponent,
     PokemonCardComponent,
-    PokemonInfoComponent
+    PokemonInfoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    SidebarModule
+    SidebarModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

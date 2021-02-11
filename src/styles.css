@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-color: #727F8C;
+  background-color: #727f8c;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }

@@ -1,9 +1,13 @@
 ng-sidebar-container {
-    height: 100vh;
+  height: 100vh;
 }
 
-:ng-deep ng-sidebar{
-    background-color: red;
-    width: 300px;
-    padding: 2em 3em;
+::ng-deep .ng-sidebar--opened {
+  background-color: hotpink;
+  height: 400px;
+  width: 100%;
+}
+
+.container-fluid {
+  width: 80%;
 }

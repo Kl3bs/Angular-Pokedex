@@ -1,11 +1,46 @@
-<ng-sidebar-container>
-  <!-- A sidebar -->
-  <ng-sidebar [(opened)]="opened">
-    <p>Sidebar contents</p>
+<!-- <ng-sidebar-container>
+  <ng-sidebar [(opened)]="opened" position="bottom">
+    <div class="container">
+      <p><a closeSidebar>This will close the sidebar too</a></p>
+
+      <a class="arrow_left" (click)="_toggleSidebar()">X</a>
+      <hr />
+    </div>
   </ng-sidebar>
 
-  <!-- Page content -->
   <div ng-sidebar-content>
-    <button (click)="toggleSidebar()">Toggle sidebar</button>
+    <a id="mobile_menu_icon" (click)="_toggleSidebar()">ABRE</a>
+
+  </div>
+</ng-sidebar-container> -->
+
+<ng-sidebar-container>
+  <ng-sidebar [(opened)]="_opened" [mode]="'over'" [position]="'bottom'">
+    <div class="sidebarContent">
+      <p>Sidebar contents</p>
+      <button class="demo-control" (click)="_toggleOpened()">
+        Close sidebar
+      </button>
+      <p><a closeSidebar>This will close the sidebar too</a></p>
+      <hr />
+      <p>Throwup on your pillow.</p>
+      <p>Steal the warm chair right after you get up.</p>
+      <p>Use lap as chair hide head under blanket.</p>
+      <p>Walk on car leaving trail of paw prints on hood.</p>
+      <p>Steal the warm chair right after you get up.</p>
+    </div>
+  </ng-sidebar>
+  <div ng-sidebar-content>
+    <section class="demo-contents">
+      <div>
+        <button class="demo-control" (click)="_toggleOpened()">
+          opened ({{ _opened }})
+        </button>
+      </div>
+    </section>
+
+    <div class="container-fluid">
+      <app-pokemon-card></app-pokemon-card>
+    </div>
   </div>
 </ng-sidebar-container>
