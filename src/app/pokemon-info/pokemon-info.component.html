@@ -17,54 +17,74 @@
 <ng-sidebar-container>
   <ng-sidebar [(opened)]="_opened" [mode]="'over'" [position]="'bottom'">
     <div class="sidebarContent">
-        <div class="row justify-content-center">
-          <div class="col-sm-6 text-center image">
-            <img
+      <div class="row justify-content-center">
+        <div class="col-sm-6 text-center image" style="">
+          <img
             id="pokemon-image"
-            src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonId + 1}}.png" 
-            alt=""
+            class="rounded-circle z-depth-2"
+            src="https://pokeres.bastionbot.org/images/pokemon/{{
+              pokemonId + 1
+            }}.png"
+            data-holder-rendered="true"
           />
-          </div>
+          <br />
 
-          <div class="col-sm-6">
-            <div  class="container-fluid" id="info-container">
-              <div id="rounded-content" style="width: 100%;">
-                <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
-                  <li [ngbNavItem]="1">
-                    <a ngbNavLink>One</a>
-                    <ng-template ngbNavContent>
-                      <p class="description">Raw denim you probably haven't</p>
-                    </ng-template>
-                  </li>
-                  <li [ngbNavItem]="2">
-                    <a ngbNavLink>Two</a>
-                    <ng-template ngbNavContent>
-                      <p class="description">Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
-                        farm-to-table craft beer twee. </p>
-                    </ng-template>
-                  </li>
-                  <li [ngbNavItem]="3">
-                    <a ngbNavLink>Three</a>
-                    <ng-template ngbNavContent>
-                      <p class="description">Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.</p>
-                    </ng-template>
-                  </li>
-                </ul>
-                
-                <div [ngbNavOutlet]="nav" class="mt-2"></div>
-                
-                <pre>Active: {{ active }}</pre>
+          <h3>Balls</h3>
 
-                <!-- <p>Lorem Ipsumtting inmtoype specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum pass</p> -->
-              </div>
-
-            </div>
-
-          </div>
-          <!-- <div class="col-sm-3"></div> -->
+          <h5>Level 120</h5>
         </div>
 
+        <div class="col-sm-6">
+          <div class="container-fluid" id="info-container">
+            <div id="rounded-content" style="width: 100%;">
+              <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+                <li [ngbNavItem]="1">
+                  <a ngbNavLink>About</a>
+                  <ng-template ngbNavContent>
+                    <p class="description">Raw denim you probably haven't</p>
+                  </ng-template>
+                </li>
+                <li [ngbNavItem]="2">
+                  <a ngbNavLink>Stats</a>
+                  <ng-template ngbNavContent>
+                    <p class="description">
+                      Exercitation +1 labore velit, blog sartorial PBR leggings
+                      next level wes anderson artisan four loko farm-to-table
+                      craft beer twee.
+                    </p>
+                  </ng-template>
+                </li>
+                <li [ngbNavItem]="3">
+                  <a ngbNavLink>Evolution</a>
+                  <ng-template ngbNavContent>
+                    <p class="description">
+                      Sed commodo, leo at suscipit dictum, quam est porttitor
+                      sapien, eget sodales nibh elit id diam.
+                    </p>
+                  </ng-template>
+                </li>
+                <li [ngbNavItem]="4">
+                  <a ngbNavLink>Moves</a>
+                  <ng-template ngbNavContent>
+                    <p class="description">
+                      Sed commodo, leo at suscipit dictum, quam est porttitor
+                      sapien, eget sodales nibh elit id diam.
+                    </p>
+                  </ng-template>
+                </li>
+              </ul>
+
+              <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+              <pre>Active: {{ active }}</pre>
+
+              <!-- <p>Lorem Ipsumtting inmtoype specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum pass</p> -->
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-sm-3"></div> -->
       </div>
+    </div>
   </ng-sidebar>
   <div ng-sidebar-content>
     <div class="container-fluid">
