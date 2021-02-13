@@ -16,7 +16,7 @@
           data-toggle="modal"
           data-target="#exampleModal"
           aria-controls="collapseExample"
-          (click)="getPokemonIndex(i)"
+          (click)="getPokemonIndex(i + 1, pokemons[i + 1].types[0].type.name, pokemons[i + 1].name)"
         >
           More Info
         </a>

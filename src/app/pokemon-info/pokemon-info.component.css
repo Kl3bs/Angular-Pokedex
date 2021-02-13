@@ -1,25 +1,13 @@
-/*
-grass = #48d0b0;
-fire = #fb6c6c;
-water = #76bdfe;
-electrical = #76bdfe;
-rock = #b1736c;
-poison = #76bdfe;
-*/
 
 ng-sidebar-container {
   height: 100vh;
 }
 
 ::ng-deep .ng-sidebar--opened {
-  background-color: hotpink;
-  height: 400px;
   width: 100%;
 }
 
-.container-fluid {
-  width: 80%;
-}
+
 
 hr {
   display: block;
@@ -31,11 +19,101 @@ hr {
   width: 80%;
 }
 
+.grass {
+  background-color: #48d0b0;
+  color: #48d0b0;
+}
+
+.grass a {
+  color: #48d0b0;
+}
+
+.fire {
+  background-color: #fb6c6c;
+  color: #fb6c6c;
+
+}
+
+.fire a{
+  color: #fb6c6c;
+}
+
+.water {
+  background-color: #76bdfe;
+  color: #76bdfe;
+}
+.water a {
+ color: #76bdfe;
+}
+
+
+.electric {
+  background-color: #ffce4b;
+  color: #ffce4b;
+}
+
+.electric a {
+color: #ffce4b;
+}
+
+.ground {
+  background-color: #b1736c;
+  color: #b1736c;
+}
+
+.ground a{
+  color: #b1736c;
+}
+
+.poison {
+  background-color: #7c538c;
+  color: #7c538c;
+}
+
+.poison a{
+ color: #7c538c;
+}
+
+.normal {
+  background-color: #deb978;
+  color: #deb978;
+}
+
+.normal a{
+  color: #deb978;
+}
+
+@media (min-width:1200px) {
+  *{
+    color: white;
+  }
+}
+
+
 
 @media (max-width:600px) {
 
-  .col-sm-6 {
+  
+ 
+  ::ng-deep .ng-sidebar--opened {
+    height: 89vh  !important;
     width: 100%;
+  }
+  
+  .col-sm-6 {
+    padding: 0;
+  }
+  
+  #info-container {
+    padding: 0;
+  }
+
+
+  #pokemon-image {
+    width: 35%;
+    height: auto;
+    margin-top: 30px;
+    background-color: white;
   }
 
   .image {
@@ -44,50 +122,32 @@ hr {
   }
   .image h3 {
     font-weight: bold;
-  }
-  ::ng-deep .ng-sidebar--opened {
-    background-color: #48d0b0;
-    height: 100vh  !important;
-    width: 100%;
-    /* position: revert; */
-  }
-/* 
-  /* .image {
-    background-color: ;
-  } */
-  #pokemon-image {
-    width: 35%;
-    height: auto;
-    margin-top: 30px;
-    background-color: white;
+    margin-top: 15px;
   }
 
-
-  #info-container {
-    width: 100%;
-    padding: 0;
+  .image h5 {
+    line-height: 0;
   }
-
 
 
   #rounded-content {
     font-family: 'Open Sans', sans-serif;
-    border-radius: 10px; 
     background-color: white;
     border-radius: 38px 38px 0px 6px / 38px 38px 0px 2px;
     height: auto;
     width: 100%;
-  
-    padding: 20px;
+    padding: 19px;
   } 
+
 
   .nav-tabs {
     font-weight: bold;
+    font-size: 14px;
   }
 
-  .description{
-    font-weight: 200;
-  }
+  /*-------------------------*/
+
+
 
 }
 

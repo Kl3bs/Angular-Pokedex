@@ -1,0 +1,41 @@
+ 
+  
+  @media (max-width:600px) {
+  
+      .about {
+      padding: 10px;
+      padding-bottom: 0px;
+      padding-top: 0px;
+
+    }
+  
+    .list-group {
+      font-family: 'Open Sans', sans-serif;
+    }
+  
+    .about .label {
+      font-family: 'Open Sans', sans-serif;
+      color: #b4b4b4;
+      font-weight: 600;
+      margin:10px 0;
+    }
+  
+    .about .label-content {
+      color: black;
+      font-weight: bolder;
+      margin:10px 0;
+    }
+  
+    .about h5 {
+      font-weight: bold;
+      padding-top: 10px ;
+      padding-left: 10px ;
+    }
+  
+    .about:nth-last-child(){
+      padding-top: 0px;
+    }
+  
+  }
+  
+  

@@ -1,0 +1,35 @@
+  .evolution-wrapper {
+    margin-top: 20px;
+    border-radius: 38px 38px 38px 38px / 30px 30px 30px 30px;
+    -webkit-box-shadow: 0px 1px 14px -9px rgba(125,125,125,1);
+    -moz-box-shadow: 0px 1px 14px -9px rgba(125,125,125,1);
+    box-shadow: 0px 1px 14px -9px rgba(125,125,125,1);
+    width: 90%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .evolution-wrapper img {
+    max-width: 100%;
+  }
+
+  .pokemon-name {
+    font-family: 'Lato', sans-serif;
+      margin-top: 5px;
+      color: #b4b4b4;
+      font-weight: 600;
+      font-size: 18px;
+
+  }
+
+  .align-self-center i{
+    font-size: 2em;
+  }
+
+  .h5 {
+      font-weight: 600;
+      font-size: 16px;
+  }
+
+  i {
+      color: #d4d2d4;
+  }

@@ -1,3 +1,4 @@
+import { Pokemon } from './../pokemon-card/pokemon';
 import { Component, OnInit } from '@angular/core';
 import {NgbNavChangeEvent} from '@ng-bootstrap/ng-bootstrap';
 
@@ -10,10 +11,16 @@ import {NgbNavChangeEvent} from '@ng-bootstrap/ng-bootstrap';
 export class PokemonInfoComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
-
-  _opened: boolean = true;
+  _opened: boolean = false;
   pokemonId: any = 0;
+
+  pokemon = new Pokemon;
+
+
+  ngOnInit(): void {
+
+  }
+
 
   _toggleOpened(): void {
     this._opened = true;
@@ -23,12 +30,12 @@ export class PokemonInfoComponent implements OnInit {
     this._opened = false;
   }
 
-  receiveIndex(pokemonIndex: number) {
-    console.log('pai:' + pokemonIndex);
-    this.pokemonId = pokemonIndex;
-  }
 
-  //Toggle display data
+  receiveIndex(pokemon: Pokemon) {
+    this.pokemon.id = pokemon.id;
+    this.pokemon.name = pokemon.name;
+    this.pokemon.type = pokemon.type;
+  }
 
   active = 1;
 

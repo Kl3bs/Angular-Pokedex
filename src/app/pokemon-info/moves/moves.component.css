@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+h6 {
+    font-family: 'Lato' , sans-serif;
+    font-weight: bold;
+}
+
+.stats {
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 10px;
+  }
+
+  .list-group {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .col-1 {
+      padding-top: 17px;
+  }
+
+  .stats .label {
+    font-family: 'Open Sans', sans-serif;
+    color: #b4b4b4;
+    font-weight: 600;
+    margin:10px 0;
+  }
+
+  .stats .label-content {
+    color: black;
+    font-weight: bolder;
+    margin:10px 0;
+  }

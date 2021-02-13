@@ -1,5 +1,6 @@
 import { PokemonService } from './../core/services/pokemon.service';
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Pokemon } from "./pokemon";
 
 @Component({
   selector: 'app-pokemon-card',
@@ -9,26 +10,32 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class PokemonCardComponent implements OnInit {
   pokemons: any = [30];
 
-  @Output() pokemonIndex = new EventEmitter();
+  @Output() pokemonIndex = new EventEmitter<any>();
   @Input() opened: any;
 
   @Output() detailViewState = new EventEmitter();
 
   constructor(private pokemonService: PokemonService) {}
 
-  ngOnInit(): void {
-    for (let i = 1; i <= 30; i++) {
-      this.pokemonService.getPokemon(i).subscribe((data) => {
-        this.pokemons[i] = data;
-      });
-    }
-
+  async ngOnInit(): Promise<void> {
+    await this.getAllPokemons();
     console.log(this.pokemons);
   }
 
-  getPokemonIndex(index: number) {
-    console.log(index);
-    this.pokemonIndex.emit(index);
+  async getAllPokemons (){
+    for (let i = 1; i <= 4; i++) {
+      await this.pokemonService.getPokemon(i)
+      .subscribe(data => this.pokemons[i] = data);
+    }
+  }
+
+  pokemon_data = new Pokemon;
+
+  async getPokemonIndex(index: number, type:string, name:string) {
+    this.pokemon_data.id = index;
+    this.pokemon_data.type = type;
+    this.pokemon_data.name = name;
+    this.pokemonIndex.emit(this.pokemon_data);
     this.detailViewState.emit((this.opened = true));
   }
 }
