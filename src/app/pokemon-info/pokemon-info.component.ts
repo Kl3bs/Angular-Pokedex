@@ -1,26 +1,33 @@
 import { Pokemon } from './../pokemon-card/pokemon';
-import { Component, OnInit } from '@angular/core';
-import {NgbNavChangeEvent} from '@ng-bootstrap/ng-bootstrap';
-
+import { Component, OnInit, OnChanges } from '@angular/core';
+import { NgbNavChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-pokemon-info',
   templateUrl: './pokemon-info.component.html',
   styleUrls: ['./pokemon-info.component.css'],
 })
-export class PokemonInfoComponent implements OnInit {
+export class PokemonInfoComponent implements OnInit, OnChanges {
   constructor() {}
 
   _opened: boolean = false;
-  pokemonId: any = 0;
 
-  pokemon = new Pokemon;
+  pokemon = new Pokemon();
+  poke_id: Number;
 
+  poke_data: any;
 
-  ngOnInit(): void {
+  active = 1;
 
+  ngOnInit(): void {}
+
+  changeActive() {
+    this.active = 1;
   }
 
+  ngOnChanges() {
+    this.poke_data = this.pokemon;
+  }
 
   _toggleOpened(): void {
     this._opened = true;
@@ -30,13 +37,10 @@ export class PokemonInfoComponent implements OnInit {
     this._opened = false;
   }
 
-
   receiveIndex(pokemon: Pokemon) {
     this.pokemon.id = pokemon.id;
+    this.poke_id = pokemon.id;
     this.pokemon.name = pokemon.name;
     this.pokemon.type = pokemon.type;
   }
-
-  active = 1;
-
 }

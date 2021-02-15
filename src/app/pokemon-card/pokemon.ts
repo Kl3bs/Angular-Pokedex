@@ -1,5 +1,6 @@
-export class Pokemon {
-    id:number | undefined;
-    name = '';
-    type = '';
+
+ export class Pokemon {
+    id:Number;
+    name: string;
+    type: string;
 }

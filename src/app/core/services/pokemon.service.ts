@@ -9,13 +9,26 @@ import { Observable } from 'rxjs';
 
 export class PokemonService {
 
-  API = "https://pokeapi.co/api/v2/pokemon/";
+  pokemonAPI = "https://pokeapi.co/api/v2/pokemon/";
+
+  evolutionAPI = "https://pokeapi.co/api/v2/evolution-chain/"
+
+  specieAPI = "https://pokeapi.co/api/v2/pokemon-species/"
+
 
   constructor(private http: HttpClient) { }
 
 
   getPokemon(id:number){
-    return this.http.get<any[]>(this.API+id);
+    return this.http.get<any[]>(this.pokemonAPI+id);
+  }
+
+  getSpecie (id:number) {
+    return this.http.get<any[]>(this.specieAPI+id);
+  }
+
+  getEvolution(url:string) {
+    return this.http.get<any[]>(url);
   }
 }
  

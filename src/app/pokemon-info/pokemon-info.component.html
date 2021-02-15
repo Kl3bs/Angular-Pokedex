@@ -1,9 +1,9 @@
 
 
-<ng-sidebar-container>
-  <ng-sidebar [(opened)]="_opened" [mode]="'over'" [position]="'top'">
+<ng-sidebar-container style="height:100vh">
+  <ng-sidebar [(opened)]="_opened" [mode]="'slide'" [position]="'top'">
     <div class="container-fluid" [ngClass]= pokemon.type  style="height: 100vh!important;">
-      <h2 closeSidebar style="color: grey;">X</h2>
+      <h2 closeSidebar (click)="changeActive()" style="color: grey;">X</h2>
       <div class="row justify-content-center">
         <div class="col-sm-6 text-center image" style="">
           <img
@@ -40,7 +40,7 @@
                 <li [ngbNavItem]="3">
                   <a ngbNavLink>Evolution</a>
                   <ng-template ngbNavContent>
-                    <app-evolutions [poke_id]="pokemonId"></app-evolutions>
+                    <app-evolutions [pokemonData]="poke_id"></app-evolutions>
                   </ng-template>
                 </li>
                 <li [ngbNavItem]="4">

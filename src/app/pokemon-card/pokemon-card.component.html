@@ -3,14 +3,14 @@
     class="col-sm-3"
     *ngFor="let pokemon of pokemons | slice: 1; let i = index"
   >
-    <div class="card">
+     <div class="card">
       <img
         class="card-img-top"
         src="https://pokeres.bastionbot.org/images/pokemon/{{ i + 1 }}.png"
       />
       <div class="card-body">
-        <h5 class="card-title">{{ pokemons[i + 1].name }}</h5>
-        <p class="card-text">Type: {{ pokemons[i + 1].types[0].type.name }}</p>
+        <h5 class="card-title">{{ pokemons[i + 1]?.name }}</h5>
+        <p class="card-text">Type: {{ pokemons[i + 1]?.types[0]?.type.name }}</p>
         <a
           class="btn btn-warning"
           data-toggle="modal"
@@ -21,6 +21,8 @@
           More Info
         </a>
       </div>
-    </div>
+    </div> 
+
+
   </div>
 </div>

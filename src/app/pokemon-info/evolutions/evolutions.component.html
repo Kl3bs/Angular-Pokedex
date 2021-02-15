@@ -2,33 +2,39 @@
     <div class="col-xs-12 evolution-wrapper">
       <div class="row justify-content-center">
         <div class="col-4 ">
-          <img src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonId + 1}}.png">
-          <p class="pokemon-name">Bulbassaur</p>
+          <img src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonData}}.png">
+          <p class="pokemon-name">{{pokemonInfo.name}}</p>
         </div>
-        <div class="col-2 align-self-center">
+        <div class="col-2 align-self-center" *ngIf="displayArrowCol">
           <i class="lni lni-arrow-right"></i> 
           <h5 class="h5">&nbsp;15</h5>
         </div>
-        <div class="col-4">
-          <img src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonId + 2}}.png">
-          <p class="pokemon-name">Bulbassaur</p>
+        <div class="col-4" *ngIf="firstEvolution != -1 && displaySecondPokemonImage == true">
+          <img src="https://pokeres.bastionbot.org/images/pokemon/{{firstEvolution}}.png">
+          <p class="pokemon-name">{{pokemonInfo.evolutions[0]}}</p>
         </div>
       </div>
     </div>
 
-    <div class="col-xs-12 evolution-wrapper">
+    <div class="col-xs-12 evolution-wrapper"  *ngIf="displaySecondRow">
       <div class="row justify-content-center">
-        <div class="col-4 ">
-          <img src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonId + 2}}.png">
-          <p class="pokemon-name">Bulbassaur</p>
+
+
+       <!-- poke name= {{pokemonInfo.name}} <br>
+        evo 1 = {{pokemonInfo.evolutions[0]}} -->
+
+        <!-- (pokemonInfo.evolutions[1]) !== undefined &&  -->
+        <div class="col-4 " *ngIf="firstEvolution != -1">
+          <img src="https://pokeres.bastionbot.org/images/pokemon/{{firstEvolution}}.png">
+          <p class="pokemon-name">{{pokemonInfo.evolutions[0]}}</p>
         </div>
-        <div class="col-2 align-self-center">
+        <div class="col-2 align-self-center" >
           <i class="lni lni-arrow-right"></i>
           <h5 class="h5">&nbsp;15</h5>
       </div>
-        <div class="col-4">
-          <img src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonId + 3}}.png">
-          <p class="pokemon-name">Bulbassaur</p>
+        <div class="col-4" *ngIf="secondEvolution != -1">
+          <img src="https://pokeres.bastionbot.org/images/pokemon/{{secondEvolution}}.png">
+          <p class="pokemon-name">{{pokemonInfo.evolutions[1]}}</p>
         </div>
       </div>
       

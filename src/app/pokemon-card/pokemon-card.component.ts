@@ -1,6 +1,6 @@
 import { PokemonService } from './../core/services/pokemon.service';
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { Pokemon } from "./pokemon";
+import { Pokemon } from './pokemon';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -9,6 +9,7 @@ import { Pokemon } from "./pokemon";
 })
 export class PokemonCardComponent implements OnInit {
   pokemons: any = [30];
+  pokemons2: any;
 
   @Output() pokemonIndex = new EventEmitter<any>();
   @Input() opened: any;
@@ -19,19 +20,19 @@ export class PokemonCardComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.getAllPokemons();
-    console.log(this.pokemons);
   }
 
-  async getAllPokemons (){
-    for (let i = 1; i <= 4; i++) {
-      await this.pokemonService.getPokemon(i)
-      .subscribe(data => this.pokemons[i] = data);
+  async getAllPokemons() {
+    for (let i = 1; i <= 40; i++) {
+      await this.pokemonService
+        .getPokemon(i)
+        .subscribe((data) => (this.pokemons[i] = data));
     }
   }
 
-  pokemon_data = new Pokemon;
+  pokemon_data = new Pokemon();
 
-  async getPokemonIndex(index: number, type:string, name:string) {
+  async getPokemonIndex(index: number, type: string, name: string) {
     this.pokemon_data.id = index;
     this.pokemon_data.type = type;
     this.pokemon_data.name = name;

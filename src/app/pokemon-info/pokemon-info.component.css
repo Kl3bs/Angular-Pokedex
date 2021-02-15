@@ -93,12 +93,11 @@ color: #ffce4b;
 
 @media (max-width:600px) {
 
-  
- 
   ::ng-deep .ng-sidebar--opened {
-    height: 89vh  !important;
+    height: 100vh  !important;
     width: 100%;
   }
+
   
   .col-sm-6 {
     padding: 0;
@@ -134,8 +133,8 @@ color: #ffce4b;
     font-family: 'Open Sans', sans-serif;
     background-color: white;
     border-radius: 38px 38px 0px 6px / 38px 38px 0px 2px;
-    height: auto;
     width: 100%;
+    height: auto;
     padding: 19px;
   } 
 
@@ -145,9 +144,21 @@ color: #ffce4b;
     font-size: 14px;
   }
 
-  /*-------------------------*/
+  @media (max-height: 700px){
+    #rounded-content {
+      height: auto;
+    } 
+  
+  }
 
-
-
+  @media (min-height: 700px){
+    #rounded-content {
+      height: 70vh;
+    } 
+  
+  }
 }
+
+
+
 
