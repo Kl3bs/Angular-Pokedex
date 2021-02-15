@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-xs-12 evolution-wrapper">
+      <div class="row justify-content-center">
+        <div class="col-4 ">
+          <img src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonId}}.png">
+          <p class="pokemon-name">{{pokemonInfo.name}}</p>
+        </div>
+        <div class="col-2 align-self-center" *ngIf="displayArrowCol">
+          <i class="lni lni-arrow-right"></i> 
+          <!-- <h5 class="h5">&nbsp;15</h5> -->
+        </div>
+        <div class="col-4" *ngIf="firstEvolution != -1 && displaySecondPokemonImage == true">
+          <img src="https://pokeres.bastionbot.org/images/pokemon/{{firstEvolution}}.png">
+          <p class="pokemon-name">{{pokemonInfo.evolutions[0]}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 evolution-wrapper"  *ngIf="displaySecondRow">
+      <div class="row justify-content-center">
+
+
+       <!-- poke name= {{pokemonInfo.name}} <br>
+        evo 1 = {{pokemonInfo.evolutions[0]}} -->
+
+        <!-- (pokemonInfo.evolutions[1]) !== undefined &&  -->
+        <div class="col-4 " *ngIf="firstEvolution != -1">
+          <img src="https://pokeres.bastionbot.org/images/pokemon/{{firstEvolution}}.png">
+          <p class="pokemon-name">{{pokemonInfo.evolutions[0]}}</p>
+        </div>
+        <div class="col-2 align-self-center" >
+          <i class="lni lni-arrow-right"></i>
+          <!-- <h5 class="h5">&nbsp;15</h5> -->
+      </div>
+        <div class="col-4" *ngIf="secondEvolution != -1">
+          <img src="https://pokeres.bastionbot.org/images/pokemon/{{secondEvolution}}.png">
+          <p class="pokemon-name">{{pokemonInfo.evolutions[1]}}</p>
+        </div>
+      </div>
+      
+    </div>
+</div>
+
+
+-------------------------------------------------------
+CONDICOES DO SERVICO DE evolution
+          // if (this.pokemonInfo?.evolutions[1] == undefined) {
+          //   this.displayArrowCol = false;
+          //   this.displaySecondPokemonImage = false;
+          // }
+
+          // if (
+          //   this.pokemonInfo.name ==
+          //   this.evolutionData?.chain.evolves_to[0]?.species?.name
+          // ) {
+          //   this.pokemonInfo.evolutions[0] = this.evolutionData?.chain.evolves_to[0]?.evolves_to[0]?.species.name;
+          // }
+
+          // if (
+          //   this.pokemonInfo.name ==
+          //     this.evolutionData?.chain.evolves_to[0]?.species?.name ||
+          //   this.pokemonInfo.name ==
+          //     this.evolutionData?.chain.evolves_to[0]?.evolves_to[0]?.species
+          //       .name ||
+          //   this.pokemonInfo.evolutions[1] == undefined
+          // ) {
+          //   this.displaySecondRow = false;
+          // }
+
+          // if (
+          //   this.pokemonInfo.name ==
+          //   this.evolutionData?.chain.evolves_to[0]?.evolves_to[0]?.species.name
+          // ) {
+          //   this.displayArrowCol = false;
+          // }
+          // // console.log(this.evolutionData);
+
+          // console.log(this.pokemonInfo);
+

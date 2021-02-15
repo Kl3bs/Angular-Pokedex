@@ -10,6 +10,8 @@ import { NgbNavChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 export class PokemonInfoComponent implements OnInit, OnChanges {
   constructor() {}
 
+  pokemonInputInfo: any;
+
   _opened: boolean = false;
 
   pokemon = new Pokemon();
@@ -23,6 +25,7 @@ export class PokemonInfoComponent implements OnInit, OnChanges {
 
   changeActive() {
     this.active = 1;
+    this.pokemonInputInfo = '';
   }
 
   ngOnChanges() {
