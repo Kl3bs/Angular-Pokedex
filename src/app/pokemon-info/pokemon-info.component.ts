@@ -19,12 +19,12 @@ export class PokemonInfoComponent implements OnInit, OnChanges {
 
   poke_data: any;
 
-  active = 1;
+  active: any = 0;
 
   ngOnInit(): void {}
 
   changeActive() {
-    this.active = 1;
+    this.active = 0;
     this.pokemonInputInfo = '';
   }
 
@@ -45,5 +45,9 @@ export class PokemonInfoComponent implements OnInit, OnChanges {
     this.poke_id = pokemon.id;
     this.pokemon.name = pokemon.name;
     this.pokemon.type = pokemon.type;
+    this.pokemon.height = pokemon.height;
+    this.pokemon.weight = pokemon.weight;
+    this.pokemon.base_experience = pokemon.base_experience;
+    this.active = pokemon.active;
   }
 }

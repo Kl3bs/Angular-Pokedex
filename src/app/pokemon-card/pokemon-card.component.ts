@@ -32,10 +32,21 @@ export class PokemonCardComponent implements OnInit {
 
   pokemon_data = new Pokemon();
 
-  async getPokemonIndex(index: number, type: string, name: string) {
+  async getPokemonIndex(
+    index: number,
+    type: string,
+    name: string,
+    height: number,
+    weight: number,
+    base_experience: number
+  ) {
     this.pokemon_data.id = index;
     this.pokemon_data.type = type;
     this.pokemon_data.name = name;
+    this.pokemon_data.height = height;
+    this.pokemon_data.weight = weight;
+    this.pokemon_data.base_experience = base_experience;
+    this.pokemon_data.active = 1;
     this.pokemonIndex.emit(this.pokemon_data);
     this.detailViewState.emit((this.opened = true));
   }

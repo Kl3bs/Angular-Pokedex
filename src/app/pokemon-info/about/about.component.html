@@ -1,37 +1,34 @@
-    <div class="row justify-content-start about">
+    <div class="row justify-content-start about" *ngIf="!isLoading">
       <div class="col-5">
         <ul class="list-group">
-          <li class="list-group label">Species</li>
+          <li class="list-group label">Type</li>
           <li class="list-group label">Height</li>
           <li class="list-group label">Weight</li>
-          <li class="list-group label">Abilities</li>
+          <li class="list-group label">Experience</li>
         </ul>
       </div>
       <div class="col-4">
         <ul class="list-group">
-          <li class="list-group label-content">Species</li>
-          <li class="list-group label-content">Height</li>
-          <li class="list-group label-content">Weight</li>
-          <li class="list-group label-content">Abilities</li>
+          <li class=" label-content" id="type">{{pokemonData.type}}</li>
+          <li class=" label-content">{{pokemonData.height}}</li>
+          <li class=" label-content">{{pokemonData.weight}}</li>
+          <li class=" label-content">{{pokemonData.base_experience}}</li>
         </ul>
       </div>
 
-      <h5 class="h5">More Info</h5>
+      <h5 class="h5" *ngIf="haveLocationArea">Location Area</h5>
     </div>
 
-    <div class="row justify-content-start about">
-      <div class="col-5">
-        <ul class="list-group">
-          <li class="list-group label">Gender</li>
-          <li class="list-group label">Egg Groups</li>
-          <li class="list-group label">Egg Cycle</li>
+    <div class="row justify-content-start about" *ngIf="!isLoading  && haveLocationArea">
+      <!-- <div class="col-3">
+        <ul class="list-group" *ngFor="let location of location_areas; let i = index;">
+          <li class="list-group label">Area {{i + 1}}</li>
+
         </ul>
-      </div>
-      <div class="col-4">
-        <ul class="list-group">
-          <li class="list-group label-content">Species</li>
-          <li class="list-group label-content">Height</li>
-          <li class="list-group label-content">Weight</li>
+      </div> -->
+      <div class="col-12">
+        <ul class="list-group" *ngFor="let location of location_areas;let i = index;">
+          <li class=" label-content"><span class="label">Area {{i + 1}}: </span> <span class="area">&nbsp;{{ location.location_area?.name }}</span></li>
         </ul>
       </div>
 

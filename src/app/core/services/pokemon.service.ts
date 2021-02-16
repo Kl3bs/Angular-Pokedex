@@ -12,6 +12,8 @@ export class PokemonService {
 
   specieAPI = 'https://pokeapi.co/api/v2/pokemon-species/';
 
+  locationAreaAPI = 'https://pokeapi.co/api/v2/pokemon/';
+
   constructor(private http: HttpClient) {}
 
   getPokemonById(id: number) {
@@ -24,6 +26,10 @@ export class PokemonService {
 
   getSpecie(id: Number) {
     return this.http.get<any[]>(this.specieAPI + id);
+  }
+
+  getLocationArea(id: Number) {
+    return this.http.get<any[]>(this.locationAreaAPI + id + '/encounters');
   }
 
   getEvolution(url: string) {

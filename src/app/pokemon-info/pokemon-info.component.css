@@ -138,12 +138,15 @@ hr {
 
   @media (max-height: 700px) {
     #rounded-content {
+      overflow-y: auto;
+
       height: auto;
     }
   }
 
   @media (min-height: 700px) {
     #rounded-content {
+      overflow-y: auto;
       height: 70vh;
     }
   }
