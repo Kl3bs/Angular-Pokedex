@@ -16,10 +16,9 @@ export class PokemonInfoComponent implements OnInit, OnChanges {
 
   pokemon = new Pokemon();
   poke_id: Number;
-
   poke_data: any;
-
   active: any = 0;
+  pokemonStats: any;
 
   ngOnInit(): void {}
 
@@ -48,6 +47,7 @@ export class PokemonInfoComponent implements OnInit, OnChanges {
     this.pokemon.height = pokemon.height;
     this.pokemon.weight = pokemon.weight;
     this.pokemon.base_experience = pokemon.base_experience;
+    this.pokemonStats = pokemon.stats;
     this.active = pokemon.active;
   }
 }

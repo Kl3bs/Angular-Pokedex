@@ -1,28 +1,38 @@
-<div class="row" style="position: relative;">
+<div class="row" style="position: relative">
   <div
     class="col-sm-3"
     *ngFor="let pokemon of pokemons | slice: 1; let i = index"
   >
-     <div class="card">
+    <div class="card">
       <img
         class="card-img-top"
         src="https://pokeres.bastionbot.org/images/pokemon/{{ i + 1 }}.png"
       />
       <div class="card-body">
         <h5 class="card-title">{{ pokemons[i + 1]?.name }}</h5>
-        <p class="card-text">Type: {{ pokemons[i + 1]?.types[0]?.type.name }}</p>
+        <p class="card-text">
+          Type: {{ pokemons[i + 1]?.types[0]?.type.name }}
+        </p>
         <a
           class="btn btn-warning"
           data-toggle="modal"
           data-target="#exampleModal"
           aria-controls="collapseExample"
-          (click)="getPokemonIndex(i + 1, pokemons[i + 1].types[0].type.name, pokemons[i + 1].name, pokemons[i + 1].height, pokemons[i + 1].weight, pokemons[i + 1].base_experience)"
+          (click)="
+            getPokemonIndex(
+              i + 1,
+              pokemons[i + 1].types[0].type.name,
+              pokemons[i + 1].name,
+              pokemons[i + 1].height,
+              pokemons[i + 1].weight,
+              pokemons[i + 1].base_experience,
+              pokemons[i + 1].stats
+            )
+          "
         >
           More Info
         </a>
       </div>
-    </div> 
-
-
+    </div>
   </div>
 </div>

@@ -12,4 +12,11 @@ export class FormatService {
 
     return aux;
   }
+
+  formatStats(stats: any) {
+    let aux;
+    aux = stats.replace(/-/gi, ' ');
+
+    return aux;
+  }
 }

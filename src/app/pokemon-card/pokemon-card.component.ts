@@ -38,7 +38,8 @@ export class PokemonCardComponent implements OnInit {
     name: string,
     height: number,
     weight: number,
-    base_experience: number
+    base_experience: number,
+    stats: any
   ) {
     this.pokemon_data.id = index;
     this.pokemon_data.type = type;
@@ -46,6 +47,7 @@ export class PokemonCardComponent implements OnInit {
     this.pokemon_data.height = height;
     this.pokemon_data.weight = weight;
     this.pokemon_data.base_experience = base_experience;
+    this.pokemon_data.stats = stats;
     this.pokemon_data.active = 1;
     this.pokemonIndex.emit(this.pokemon_data);
     this.detailViewState.emit((this.opened = true));

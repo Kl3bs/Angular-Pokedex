@@ -1,51 +1,24 @@
 <div class="row justify-content-start stats">
-  <div class="col-4">
-      <ul class="list-group">
-        <li class="list-group label">HP</li>
-        <li class="list-group label">Attack</li>
-        <li class="list-group label">Defense</li>
-        <li class="list-group label">Sp. Atk</li>
-        <li class="list-group label">Sp. Def</li>
-        <li class="list-group label">Speed</li>
-      </ul>
-    </div>
+  <div class="col-12">
+    <ul class="list-group" *ngFor="let stat of pokemonStats; let i = index">
+      <li class="list-group label">
+        <div class="row">
+          <div class="col-3">{{ pokemonStats[i].stat.name }}</div>
+          <div class="col-2 stats-number">
+            {{ pokemonStats[i].base_stat }}
+          </div>
 
-    <div class="col-1">
-      <ul class="list-group">
-        <li class="list-group label stats-number">10</li>
-        <li class="list-group label stats-number">10</li>
-        <li class="list-group label stats-number">10</li>
-        <li class="list-group label stats-number">10</li>
-        <li class="list-group label stats-number">10</li>
-        <li class="list-group label stats-number">10</li>
-      </ul>
-    </div>
-
-    <div class="col-6">
-
-      <ul class="list-group" id="status-bar-group">
-        <li class="list-group label-content">
-          <p><ngb-progressbar type="danger" [value]="75" height=".5rem"></ngb-progressbar></p>
-        </li>
-        <li class="list-group label-content">
-          <p><ngb-progressbar type="success" [value]="75" height=".5rem"></ngb-progressbar></p>
-        </li>
-        <li class="list-group label-content">
-          <p><ngb-progressbar type="danger" [value]="75" height=".5rem"></ngb-progressbar></p>
-        </li>
-        <li class="list-group label-content">
-          <p><ngb-progressbar type="success" [value]="75" height=".5rem"></ngb-progressbar></p>
-        </li>
-        <li class="list-group label-content">
-          <p><ngb-progressbar type="success" [value]="75" height=".5rem"></ngb-progressbar></p>
-        </li>
-        <li class="list-group label-content">
-          <p><ngb-progressbar type="danger" [value]="75" height=".5rem"></ngb-progressbar></p>
-        </li> 
-
-      </ul>
-
-    </div>
-    <div class="w-100"></div>
-
+          <div class="col-7 label-content">
+            <p>
+              <ngb-progressbar
+                type="danger"
+                [value]="pokemonStats[i].base_stat"
+                height=".5rem"
+              ></ngb-progressbar>
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
+</div>

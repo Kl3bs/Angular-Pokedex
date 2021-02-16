@@ -6,4 +6,5 @@ export class Pokemon {
   weight: Number;
   base_experience: Number;
   active: Number;
+  stats: [];
 }
