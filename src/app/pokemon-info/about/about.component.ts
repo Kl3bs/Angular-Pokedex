@@ -43,6 +43,7 @@ export class AboutComponent implements OnInit, OnChanges {
           }
 
           this.isLoading = false;
+          //asd
         }
       });
   }
