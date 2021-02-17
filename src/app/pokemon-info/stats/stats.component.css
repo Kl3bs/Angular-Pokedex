@@ -1,3 +1,35 @@
+.stats {
+  padding: 10px;
+  padding-bottom: 0px;
+  padding-top: 30px;
+}
+
+.list-group {
+  font-family: "Open Sans", sans-serif;
+}
+
+.stats .label {
+  font-family: "Open Sans", sans-serif;
+  color: #b4b4b4;
+  font-weight: 600;
+  margin: 10px 0;
+  text-transform: capitalize;
+}
+
+.stats .label-content {
+  color: black;
+  font-weight: bolder;
+  margin: 10px 0;
+}
+
+#status-bar-group {
+  margin-top: 10px;
+}
+
+.stats-number {
+  color: #000 !important;
+}
+
 @media (max-width: 600px) {
   .stats {
     padding: 10px;

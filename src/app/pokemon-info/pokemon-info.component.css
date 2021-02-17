@@ -16,6 +16,55 @@ hr {
   width: 80%;
 }
 
+/*---------------------------------------------------------------*/
+
+.desktop .col-sm-6 {
+  padding: 0;
+}
+
+.desktop #info-container {
+  padding: 0;
+}
+
+.desktop #pokemon-image {
+  width: 55%;
+  height: auto;
+  margin-top: 30px;
+}
+
+.desktop .image {
+  padding-bottom: 20px;
+  color: white;
+}
+.desktop .image h3 {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.desktop .image h3::first-letter {
+  text-transform: uppercase;
+}
+
+.desktop .image h5 {
+  line-height: 0;
+}
+
+.desktop #rounded-content {
+  font-family: "Open Sans", sans-serif;
+  background-color: white;
+  border-radius: 38px 38px 0px 6px / 38px 38px 0px 2px;
+  width: 100%;
+  height: auto;
+  padding: 19px;
+}
+
+.desktop .nav-tabs {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/*88888888888888888888888888888888888888888888888888888888888888888*/
+
 .grass {
   background-color: #48d0b0;
   color: #48d0b0;
@@ -78,13 +127,22 @@ hr {
   color: #deb978;
 }
 
-@media (min-width: 1200px) {
-  * {
-    color: white;
-  }
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: initial;
 }
 
 @media (max-width: 600px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: initial;
+  }
   ::ng-deep .ng-sidebar--opened {
     height: 100vh !important;
     width: 100%;
@@ -141,13 +199,14 @@ hr {
       overflow-y: auto;
 
       height: auto;
+      padding-bottom: 20vh;
     }
   }
 
   @media (min-height: 700px) {
     #rounded-content {
-      overflow-y: auto;
       height: 70vh;
+      padding-bottom: 15vh;
     }
   }
 }

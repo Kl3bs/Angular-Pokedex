@@ -15,26 +15,47 @@
       <li class="label-content">{{ pokemonData.base_experience }}</li>
     </ul>
   </div>
-
-  <h5 class="h5" *ngIf="haveLocationArea">Location Area</h5>
 </div>
 
 <div
   class="row justify-content-start about"
   *ngIf="!isLoading && haveLocationArea"
 >
-  <!-- <div class="col-3">
-        <ul class="list-group" *ngFor="let location of location_areas; let i = index;">
-          <li class="list-group label">Area {{i + 1}}</li>
+  <div class="col-12 mobile">
+    <h5 class="h5" *ngIf="haveLocationArea">Location Area</h5>
 
-        </ul>
-      </div> -->
-  <div class="col-12">
     <ul
       class="list-group"
       *ngFor="let location of location_areas; let i = index"
     >
       <li class="label-content">
+        <span class="label">Area {{ i + 1 }}: </span>
+        <span class="area">&nbsp;{{ location.location_area?.name }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-6 desktop">
+    <h5 class="h5" *ngIf="haveLocationArea">Location Area</h5>
+
+    <ul
+      class="list-group"
+      *ngFor="let location of location_areas; let i = index"
+    >
+      <li class="label-content" *ngIf="i % 2 == 0 && i < 15">
+        <span class="label">Area {{ i + 1 }}: </span>
+        <span class="area">&nbsp;{{ location.location_area?.name }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-6 desktop">
+    <br /><br />
+    <ul
+      class="list-group"
+      *ngFor="let location of location_areas; let i = index"
+    >
+      <li class="label-content" *ngIf="i % 2 != 0 && i < 15">
         <span class="label">Area {{ i + 1 }}: </span>
         <span class="area">&nbsp;{{ location.location_area?.name }}</span>
       </li>

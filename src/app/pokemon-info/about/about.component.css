@@ -1,4 +1,59 @@
+.about {
+  padding: 10px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  overflow-y: auto;
+}
+
+.list-group {
+  font-family: "Open Sans", sans-serif;
+}
+
+.about .label {
+  font-family: "Open Sans", sans-serif;
+  color: #b4b4b4;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.about .label-content {
+  color: black;
+  font-weight: bolder;
+  margin: 10px 0;
+  list-style: none;
+  text-transform: capitalize;
+}
+
+.about h5 {
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.about:nth-last-child() {
+  padding-top: 0px;
+}
+
+.area {
+  text-transform: capitalize;
+}
+
+.desktop {
+  display: initial;
+}
+
+.mobile {
+  display: none;
+}
+
 @media (max-width: 600px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: initial;
+  }
+
   .about {
     padding: 10px;
     padding-bottom: 0px;
@@ -27,7 +82,6 @@
   .about h5 {
     font-weight: bold;
     padding-top: 10px;
-    padding-left: 10px;
   }
 
   .about:nth-last-child() {

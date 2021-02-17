@@ -1,11 +1,22 @@
 <ng-sidebar-container style="height: 100vh">
-  <ng-sidebar [(opened)]="_opened" [mode]="'slide'" [position]="'top'">
+  <ng-sidebar
+    [(opened)]="_opened"
+    [mode]="'slide'"
+    [position]="'top'"
+    class="mobile"
+  >
     <div
       class="container-fluid"
       [ngClass]="pokemon.type"
       style="height: 100vh !important"
     >
-      <h2 closeSidebar (click)="changeActive()" style="color: grey">X</h2>
+      <h2
+        closeSidebar
+        (click)="changeActive()"
+        style="color: white; padding: 10px 10px 10px 0px; cursor: pointer"
+      >
+        <i class="far fa-times-circle"></i>
+      </h2>
       <div class="row justify-content-center">
         <div class="col-sm-6 text-center image" style="">
           <img
@@ -19,11 +30,94 @@
           <br />
 
           <h3 class="h3 pokemon-name">{{ pokemon.name }}</h3>
+          <br />
+          <h5>Level 1</h5>
+        </div>
+
+        <div
+          class="col-sm-6"
+          style="
+            background-color: white;
+            border-radius: 38px 38px 0px 6px / 38px 38px 0px 2px;
+          "
+        >
+          <div id="rounded-content" style="width: 100%">
+            <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+              <li [ngbNavItem]="1">
+                <a ngbNavLink>About</a>
+                <ng-template ngbNavContent>
+                  <app-about [pokemonData]="pokemon"></app-about>
+                </ng-template>
+              </li>
+
+              <li [ngbNavItem]="2">
+                <a ngbNavLink>Stats</a>
+                <ng-template ngbNavContent>
+                  <app-stats [pokemonStats]="pokemonStats"></app-stats>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="3">
+                <a ngbNavLink>Evolution</a>
+                <ng-template ngbNavContent>
+                  <app-evolutions
+                    [pokemonId]="poke_id"
+                    [pokemonInfo]="pokemonInputInfo"
+                  ></app-evolutions>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="4">
+                <a ngbNavLink>Moves</a>
+                <ng-template ngbNavContent>
+                  <app-moves></app-moves>
+                </ng-template>
+              </li>
+            </ul>
+
+            <div [ngbNavOutlet]="nav" class="mt-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-sidebar>
+
+  <ng-sidebar
+    [(opened)]="_opened"
+    [mode]="'over'"
+    [position]="'bottom'"
+    class="desktop"
+  >
+    <div class="container-fluid" [ngClass]="pokemon.type">
+      <h2
+        closeSidebar
+        (click)="changeActive()"
+        style="color: white; padding: 10px 10px 10px 0px; cursor: pointer"
+      >
+        <i class="far fa-times-circle"></i>
+      </h2>
+      <div class="row justify-content-center" style="padding-right: 50px">
+        <div class="col-sm-6 text-center image" style="">
+          <img
+            id="pokemon-image"
+            class=""
+            src="https://pokeres.bastionbot.org/images/pokemon/{{
+              pokemon.id
+            }}.png"
+            data-holder-rendered="true"
+          />
+          <br />
+
+          <h3 class="h3 pokemon-name">{{ pokemon.name }}</h3>
 
           <h5>Level 1</h5>
         </div>
 
-        <div class="col-sm-6">
+        <div
+          class="col-sm-6"
+          style="
+            background-color: white;
+            border-radius: 38px 38px 0px 6px / 38px 38px 0px 2px;
+          "
+        >
           <div id="rounded-content" style="width: 100%">
             <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
               <li [ngbNavItem]="1">

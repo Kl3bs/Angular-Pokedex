@@ -23,7 +23,7 @@ export class PokemonCardComponent implements OnInit {
   }
 
   async getAllPokemons() {
-    for (let i = 1; i <= 40; i++) {
+    for (let i = 1; i <= 70; i++) {
       await this.pokemonService
         .getPokemonById(i)
         .subscribe((data) => (this.pokemons[i] = data));
