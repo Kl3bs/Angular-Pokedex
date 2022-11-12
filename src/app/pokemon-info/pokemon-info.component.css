@@ -127,6 +127,15 @@ hr {
   color: #deb978;
 }
 
+.bug {
+  background-color: #deb978;
+  color: #deb978;
+}
+
+.bug a {
+  color: #deb978;
+}
+
 .mobile {
   display: none;
 }

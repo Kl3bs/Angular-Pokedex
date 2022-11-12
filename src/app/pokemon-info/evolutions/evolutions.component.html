@@ -1,63 +1,109 @@
 <div class="row justify-content-center">
-    <div class="col-xs-12 evolution-wrapper" *ngIf="pokemonInfo.name != pokemonInfo.firstEvolution.name && pokemonInfo.name != pokemonInfo.secondEvolution.name">
-      <div class="row justify-content-center">
-        <div class="col-4 ">
-          <img src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonId}}.png">
-          <p class="pokemon-name">{{pokemonInfo.name}}</p>
-        </div>
-        <div class="col-2 align-self-center" >
-          <i class="lni lni-arrow-right"></i> 
-          <!-- <h5 class="h5">&nbsp;15</h5> -->
-        </div>
-        <div class="col-4" >
-          <img src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonInfo.firstEvolution.id}}.png">
-          <p class="pokemon-name">{{pokemonInfo.firstEvolution.name}}</p>
-        </div>
+  <div
+    class="col-xs-12 evolution-wrapper"
+    *ngIf="
+      pokemonInfo.name != pokemonInfo.firstEvolution.name &&
+      pokemonInfo.name != pokemonInfo.secondEvolution.name
+    "
+  >
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{
+            pokemonId
+          }}.png"
+        />
+        <p class="pokemon-name">{{ pokemonInfo.name }}</p>
+      </div>
+      <div class="col-2 align-self-center">
+        <i class="lni lni-arrow-right"></i>
+        <!-- <h5 class="h5">&nbsp;15</h5> -->
+      </div>
+      <div class="col-4">
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{
+            pokemonInfo.firstEvolution.id
+          }}.png"
+        />
+        <p class="pokemon-name">{{ pokemonInfo.firstEvolution.name }}</p>
       </div>
     </div>
+  </div>
 
-    <div class="col-xs-12 evolution-wrapper" *ngIf="pokemonInfo.name != pokemonInfo.secondEvolution.name && pokemonInfo.secondEvolution.name != undefined" >
-      <div class="row justify-content-center">
-
-
-       <!-- poke name= {{pokemonInfo.name}} <br>
+  <div
+    class="col-xs-12 evolution-wrapper"
+    *ngIf="
+      pokemonInfo.name != pokemonInfo.secondEvolution.name &&
+      pokemonInfo.secondEvolution.name != undefined
+    "
+  >
+    <div class="row justify-content-center">
+      <!-- poke name= {{pokemonInfo.name}} <br>
         evo 1 = {{pokemonInfo.evolutions[0]}} -->
 
-        <!-- (pokemonInfo.evolutions[1]) !== undefined &&  -->
-        <div class="col-4 " >
-          <img src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonInfo.firstEvolution.id}}.png">
-          <p class="pokemon-name">{{pokemonInfo?.firstEvolution?.name}}</p>
-        </div>
-        <div class="col-2 align-self-center" >
-          <i class="lni lni-arrow-right"></i>
-          <!-- <h5 class="h5">&nbsp;15</h5> -->
+      <!-- (pokemonInfo.evolutions[1]) !== undefined &&  -->
+      <div class="col-4">
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{
+            pokemonInfo.firstEvolution.id
+          }}.png"
+        />
+        <p class="pokemon-name">{{ pokemonInfo?.firstEvolution?.name }}</p>
       </div>
-        <div class="col-4" >
-          <img src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonInfo.secondEvolution.id}}.png">
-          <p class="pokemon-name">{{pokemonInfo?.secondEvolution?.name}}</p>
-        </div>
+      <div class="col-2 align-self-center">
+        <i class="lni lni-arrow-right"></i>
+        <!-- <h5 class="h5">&nbsp;15</h5> -->
       </div>
-      
+      <div class="col-4">
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{
+            pokemonInfo.secondEvolution.id
+          }}.png"
+        />
+        <p class="pokemon-name">{{ pokemonInfo?.secondEvolution?.name }}</p>
+      </div>
     </div>
+  </div>
 
-    <div class="col-xs-12 evolution-wrapper" *ngIf="pokemonInfo.name == pokemonInfo.secondEvolution.name" >
-      <div class="row justify-content-center">
-        <div class="col-6 ">
-          <img src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonId}}.png">
-          <p class="pokemon-name text-center">{{pokemonInfo?.name}}</p>
-          <p class="text-center no-evolution">This pokémon has no more evolutions</p>
-        </div>
+  <div
+    class="col-xs-12 evolution-wrapper"
+    *ngIf="pokemonInfo.name == pokemonInfo.secondEvolution.name"
+  >
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{
+            pokemonId
+          }}.png"
+        />
+        <p class="pokemon-name text-center">{{ pokemonInfo?.name }}</p>
+        <p class="text-center no-evolution">
+          This pokémon has no more evolutions
+        </p>
       </div>
     </div>
+  </div>
 
-    <div class="col-xs-12 evolution-wrapper" *ngIf="!pokemonInfo?.singleEvolution || pokemonInfo?.name == pokemonInfo?.firstEvolution?.name && pokemonInfo?.secondEvolution?.name == undefined" >
-      <div class="row justify-content-center">
-        <div class="col-6 ">
-          <img src="https://pokeres.bastionbot.org/images/pokemon/{{pokemonId}}.png">
-          <p class="pokemon-name text-center">{{pokemonInfo?.name}}</p>
-          <p class="text-center no-evolution">This pokémon has no more evolutions</p>
-        </div>
+  <div
+    class="col-xs-12 evolution-wrapper"
+    *ngIf="
+      !pokemonInfo?.singleEvolution ||
+      (pokemonInfo?.name == pokemonInfo?.firstEvolution?.name &&
+        pokemonInfo?.secondEvolution?.name == undefined)
+    "
+  >
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{
+            pokemonId
+          }}.png"
+        />
+        <p class="pokemon-name text-center">{{ pokemonInfo?.name }}</p>
+        <p class="text-center no-evolution">
+          This pokémon has no more evolutions
+        </p>
       </div>
     </div>
+  </div>
 </div>
-
